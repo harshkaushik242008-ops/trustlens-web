@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrustLens Sovereign | AI Fraud Detection</title>
+  <meta name="description" content="AI-powered fraud, scam and phishing detection for online shopping. Check any link and chat with an AI safety assistant." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top">🛡️ TrustLens <span>Sovereign</span></a>
+      <nav class="links">
+        <a href="#checker">Link Checker</a>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#extension">Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <span class="badge">AI-powered · Real-time · Free to try</span>
+      <h1>Shop smart.<br /><span class="grad">Detect fraud before you pay.</span></h1>
+      <p class="lead">
+        TrustLens Sovereign analyzes links, messages and seller details with AI and gives you a clear
+        risk score, the threats it found and what to do next.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#checker">Check a link now</a>
+        <button class="btn ghost" id="heroChat" type="button">Ask the AI assistant</button>
+      </div>
+    </section>
+
+    <section id="checker" class="wrap section">
+      <h2>Live Link Checker</h2>
+      <p class="sub">Paste a product link, website, seller message or any suspicious text.</p>
+
+      <div class="card checker">
+        <textarea id="checkInput" rows="4" maxlength="4000"
+          placeholder="e.g. https://amazon-offers-login.xyz/verify  or  'Pay advance on WhatsApp to get iPhone at 90% off'"></textarea>
+
+        <div class="chips">
+          <span class="muted">Try an example:</span>
+          <button type="button" class="chip" data-example="http://amazon-india-gift.top/login/verify-account">Fake login link</button>
+          <button type="button" class="chip" data-example="Congratulations! You won an iPhone 15. Pay Rs 999 delivery fee on UPI and share the OTP to claim within 10 minutes.">Prize scam message</button>
+          <button type="button" class="chip" data-example="https://www.amazon.in/dp/B0EXAMPLE">Normal Amazon link</button>
+        </div>
+
+        <div class="row">
+          <span class="muted" id="charCount">0 / 4000</span>
+          <button class="btn primary" id="checkBtn" type="button">Analyze</button>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="features" class="wrap section">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card feat"><div class="ico">🔍</div><h3>Smart link checks</h3><p>Detects lookalike domains, fake login pages, shortened links and insecure URLs.</p></div>
+        <div class="card feat"><div class="ico">🧠</div><h3>AI risk analysis</h3><p>A large language model reads the context and returns a 0-100 risk score and verdict.</p></div>
+        <div class="card feat"><div class="ico">💬</div><h3>AI safety chatbot</h3><p>Ask anything about scams, UPI fraud or fake sellers in English, Hindi or Hinglish.</p></div>
+        <div class="card feat"><div class="ico">🧩</div><h3>Chrome extension</h3><p>A floating shield on Amazon and Flipkart scans the page you are viewing.</p></div>
+        <div class="card feat"><div class="ico">⚡</div><h3>Fast inference</h3><p>Powered by the Groq API with automatic model fallback for reliability.</p></div>
+        <div class="card feat"><div class="ico">🔒</div><h3>Privacy first</h3><p>Your API keys stay on the server and nothing you type is stored by this site.</p></div>
+      </div>
+    </section>
+
+    <section id="how" class="wrap section">
+      <h2>How it works</h2>
+      <div class="grid three">
+        <div class="card step"><span class="num">1</span><h3>Paste or browse</h3><p>Paste a link or message here, or let the extension collect page signals.</p></div>
+        <div class="card step"><span class="num">2</span><h3>Analyze</h3><p>URL heuristics plus an AI model look for phishing and fraud patterns.</p></div>
+        <div class="card step"><span class="num">3</span><h3>Act safely</h3><p>Get the verdict, the threats found and clear steps to stay safe.</p></div>
+      </div>
+    </section>
+
+    <section id="extension" class="wrap section">
+      <div class="card ext">
+        <h2>Get the Chrome extension</h2>
+        <p class="sub">Scan Amazon and Flipkart product pages with one click.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/YOUR_USERNAME/trustlens-sovereign" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn ghost" href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Watch demo video</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> TrustLens Sovereign · Built for a hackathon. AI results are guidance, not a guarantee. Always verify before you pay.</p>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <button class="chat-fab" id="chatFab" type="button" aria-label="Open AI chat">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#00ffc8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l8 3v6c0 5-3.5 9.4-8 11-4.5-1.6-8-6-8-11V5l8-3z" fill="rgba(0,255,200,.12)"/>
+      <path d="M8.5 12l2.5 2.5 4.5-5"/>
+    </svg>
+  </button>
+
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="TrustLens AI assistant">
+    <div class="chat-head">
+      <div><strong>TrustLens Assistant</strong><small>Online safety AI</small></div>
+      <button id="chatClose" type="button" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-msgs" id="chatMsgs"></div>
+    <div class="chat-suggest" id="chatSuggest">
+      <button type="button" class="chip">How do I spot a fake seller?</button>
+      <button type="button" class="chip">UPI scam se kaise bachu?</button>
+      <button type="button" class="chip">What is phishing?</button>
+    </div>
+    <div class="chat-input">
+      <input id="chatInput" type="text" maxlength="500" placeholder="Ask about scams, links, sellers..." />
+      <button id="chatSend" type="button">Send</button>
+    </div>
+  </div>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "trustlens-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TrustLens Sovereign - AI fraud detection website, link checker and chatbot",
+  "license": "MIT",
+  "dependencies": {
+    "groq-sdk": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
